@@ -1,33 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/output.css">
-    <title>Don-Don-Ziki</title>
-</head>
-<body class="">
-    <!-- Choose zone -->
-     <section>
-        <div class="grid grid-cols-3 grid-rows-2">
-            <button><img src="./images/scissors.svg" alt="scissors"></button>
-            <button><img src="./images/paper.svg" alt="paper"></button>
-            <button><img src="./images/rock.svg" alt="rock"></button>
-            <button><img src="./images/lizard.svg" alt="lizard"></button>
-            <button><img src="./images/scop.svg" alt="scop"></button>
-        </div>
-     </section>
+<html class=" bg-[radial-gradient(134.34%_134.34%_at_50%_0%,_#1F3757_0%,_#131537_100%)] h-full" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DON-DON-ZIKI</title>
+    <link href="css/output.css" rel="stylesheet" />
+  </head>
+  <body
+  >
+    <header
+      class="mx-auto w-full max-w-[740px] px-3 py-10 max-[600px]: max-w-fullmax-[600px]"
+    >
+      <img src="images/header.png" alt="" />
+    </header>
+    <!-- choose zone  -->
+    <section class="flex justify-center py-[100px]" id="choosezone">
+      <div
+        class="grid grid-cols-2 grid-rows-2 w-full max-w-[476px] gap-x-20 gap-y-6 bg-no-repeat bg-center bg-[url('../images/triangle.svg')]"
+        id="zonegrid"
+      >
+        <button>
+          <img class="hand" src="./images/paper.svg" alt="paper" />
+        </button>
+        <button>
+          <img class="hand" src="./images/scissors.svg" alt="scissors" />
+        </button>
+        <button class="col-start-1 col-end-3 place-items-center">
+          <img class="hand" src="./images/rock.svg" alt="rock" />
+        </button>
+        <button class="">
+          <img
+            class="hand mode-hard hidden"
+            src="./images/lizard.svg"
+            alt="lizard"
+          />
+        </button>
+        <button class="">
+          <img
+            class="hand mode-hard hidden"
+            src="./images/spock.svg"
+            alt="spock"
+          />
+        </button>
+      </div>
+    </section>
+    <!-- status zone  -->
+    <section class="hidden pt-8 max-[600px]:pt-[50px]" id="statuszone">
+      <div class="con flex  flex-col items-center justify-center  max-[600px]:gap-[50px]">
+        <!-- user -->
+       
+          
+          <div class=" flex items-center justify-around w-[90%] ">
+              <h3
+            class="text-[30px] text-white px-6"
+          > 
+            You picked
+          </h3>
 
-     <!-- status zone -->
+             <h3
+            class="text-[30px] text-white"
+          > 
+            The house  picked
+          </h3>
 
-     <section>
-        <div>
-            <!-- Player -->
-            <img src="" alt="">
-            <!-- AI -->
-            <img src="" alt="">
+
+          </div>
+  
         </div>
-     </section>
-    <script type="module" src="./js/app.js"></script>
-</body>
+
+
+        <div class="flex items-center gap-28 justify-center mt-10">
+          <img class="user" src="" alt="" />
+        <!-- play again  -->
+          <div class=" flex items-center flex-col gap-5">
+             <div
+          class=" flex-col items-center max-[900px]:absolute max-[900px]:bottom-[100px] max-[900px]:left-2/4 max-[900px]:-translate-x-2/4 max-[600px]:bottom-[150px]"
+          id="refreshGameWindow"
+        >
+          <button id="refreshGameButton" class="btn btn-accent justify-center min-w-[220px] rounded-lg bg-white p-[15px] text-center uppercase tracking-[2.5px] text-dark-blue transition-transform active:scale-95"">
+            play again
+          </button>
+        </div>  
+        <div role="alert" class="alert alert-success w-full flex items-center text-[18px] gap-2">
+          <div class="flex items-center justify-center ">
+            <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 shrink-0 stroke-current ml-12"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <span id="statusText" class="ml-3"></span>
+          </div>
+          </div>
+        </div>
+
+
+            <!-- Robot  -->
+        <img class="ai" src="images/load.svg" alt="load" />
+        </div>
+
+
+
+
+  
+       
+
+
+      </div>
+    </section>
+
+    <!-- rules button -->
+    <button
+      class="absolute bottom-25 right-5 min-w-[130px] max-w-[130px] rounded-lg border border-white p-[10px] font-semibold uppercase tracking-[2.5px] text-white transition-all hover:bg-white hover:text-dark-blue active:scale-95 max-[600px]:bottom-14 max-[600px]:left-2/4 max-[600px]:-translate-x-2/4"
+      id="showRulesModalButton"
+    >
+      Rules
+    </button>
+    <!-- rules  -->
+    <dialog id="rules" class="modal max-[600px]:max-h-full">
+      <div
+        class="modal-box w-[400px] rounded-lg p-8 max-[600px]:h-full max-[600px]:max-h-full max-[600px]:w-full max-[600px]:max-w-full max-[600px]:rounded-none max-[600px]:px-[35px] max-[600px]:pt-[95px]"
+      >
+        <div
+          class="flex items-center justify-between pb-12 max-[600px]:block max-[600px]:pb-[113px]"
+        >
+          <h3
+            class="text-[32px] font-bold uppercase text-dark-blue max-[600px]:text-center"
+          >
+            Rules
+          </h3>
+          <form method="dialog">
+            <button
+              class="btn btn-circle btn-ghost outline-dashed max-[600px]:absolute max-[600px]:bottom-[66px] max-[600px]:left-2/4 max-[600px]:-translate-x-2/4 max-[600px]:active:-translate-x-2/4"
+            >
+              <img
+                class="h-5 w-5 object-contain"
+                src="	https://rock-paper-scissors-selfmade.netlify.app/img/x.svg"
+                alt="Close button"
+              />
+            </button>
+          </form>
+        </div>
+        <img
+          class="mx-auto h-[271px] w-[305px] object-contain"
+          src="	https://rock-paper-scissors-selfmade.netlify.app/img/rules.svg"
+          alt="Rules"
+          width="305"
+          height="271"
+        />
+      </div>
+    </dialog>
+
+    <button class="btn btn-info absolute bottom-5 right-5" id="modechanger">
+      easy mode
+    </button>
+    <script type="module" src="js/main.js"></script>
+  </body>
 </html>
